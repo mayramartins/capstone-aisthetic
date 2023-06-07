@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 import { Spinner, Card, FormEntry } from '../components';
 
+const RenderCards = ({ data, title }) => {
+  // if data is >0 I want to map over to data render all cards while passing all of the post data to each card
+  if(data?.length > 0) {
+    return data.map((post) => <Card key={post._id} {...post} />)
+  }
+  return (
+    <h2 className="mt-5 font-bold text-[#6449ff] text-xl uppercase">{title}</h2>
+  )
+}
+
 const Home = () => {
   const [spinning, setSpinning] = useState(false); //change true spinning
   const [allPosts, setAllPosts] = useState(null);
@@ -33,8 +43,20 @@ const Home = () => {
                 Displaying findings for <span className="text-[#222328]">{findText}</span>
               </h2>
             )}
+            <div className="grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
+              {findText ? (
+                <RenderCards
+                  data={[]} 
+                  title="No search results found"
+                />
+              ) : (
+                <RenderCards 
+                  data={[]}
+                  title="No posts found"
+                />
+              )}
+            </div>
           </>
-
         )}
 
       </div>
