@@ -2,7 +2,10 @@ import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 
+// Routes
 import connectDB from "./mongodb/connect.js";
+import postRoutes from "./routes/postRoutes.js";
+import aistheticRoutes from "./routes/aistheticRoutes.js";
 
 dotenv.config(); // allows to pull environment variables to pull dotenv file
 
@@ -12,7 +15,9 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 
-// Routes
+app.use("/api/v1/post", postRoutes);
+app.use("/api/v1/aisthetic", aistheticRoutes);
+
 app.get("/", async (req, res) => {
   res.send("Hello from AIsthetic!");
 });
