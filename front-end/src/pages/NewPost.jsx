@@ -30,12 +30,12 @@ const NewPost = () => {
         });
 
         const data = await response.json();
-        console.log(response);
-        console.log(data);
+        //console.log(response );
+        //console.log(data);
         
         setForm({...form, picture: `data:image/jpeg;base64,${data.picture}`}) //base 64 way to transform content in a text format (image format binary)
         
-        setTimeout(()=> console.log(form), 2000);
+        //setTimeout(()=> console.log(form), 2000);
       } catch (error) {
         alert(error);
       } finally {
