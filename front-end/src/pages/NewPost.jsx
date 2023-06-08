@@ -47,7 +47,24 @@ const NewPost = () => {
   };
   
   
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault(); //prevent the browser to reload the app
+
+    if(form.prompt && form.picture) {
+      setLoading(true);
+
+      try {
+        const response = await fetch('http://localhost:8080/api/v1/posts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form) 
+        })
+      } catch (err) {
+
+      }
+    }
 
   }
 
