@@ -1,8 +1,17 @@
 import React from 'react'
 
-const FormEntry = () => {
+const FormEntry = ({ LabelName, type, name, placeholder, value, handleChange, isSurpriseMe, handleSurpriseMe }) => {
   return (
-    <div>FormEntry</div>
+    <div>
+      <div className="flex items-center gap-2 mb-2">
+        <label
+          htmlFor={name}
+          className="block text-sm font-medium text-gray-900"
+        >
+          {LabelName}
+        </label>
+      </div>
+    </div>
   )
 }
 
