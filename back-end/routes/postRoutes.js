@@ -40,6 +40,7 @@ router.route("/").post(async (req, res) => {
 
     res.status(201).json({ success: true, data: newPost });
   } catch (error) {
+    console.log("aqui", error);
     res.status(500).json({ success: false, message: error });
   }
 });
