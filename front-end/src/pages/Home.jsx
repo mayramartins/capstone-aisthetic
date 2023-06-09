@@ -5,18 +5,47 @@ import { Spinner, Card, FormEntry } from '../components';
 const RenderCards = ({ data, title }) => {
   // if data is >0 I want to map over to data render all cards while passing all of the post data to each card
   if(data?.length > 0) {
-    return data.map((post) => <Card key={post._id} {...post} />)
+    return data.map((post) => <Card key={post._id} {...post} />);
   }
   return (
     <h2 className="mt-5 font-bold text-[#6449ff] text-xl uppercase">{title}</h2>
-  )
-}
+  );
+};
 
 const Home = () => {
   const [spinning, setSpinning] = useState(false); //change true spinning
   const [allPosts, setAllPosts] = useState(null);
 
   const [findText, setfindText] = useState('');
+
+  // Make a call to get all the posts
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setSpinning(true);
+      
+
+      try {
+        const response = await fetch('http://localhost:8080/api/v1/post', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+
+        if(response.ok) {
+          const result = await response.json();
+
+          setAllPosts(result.data.reverse());
+        }
+      } catch (error) {
+        alert(error)
+      } finally {
+        setSpinning(false)
+      }
+
+    }
+    fetchPosts();
+  }, []);
 
 
   return (
@@ -51,7 +80,7 @@ const Home = () => {
                 />
               ) : (
                 <RenderCards 
-                  data={[]}
+                  data={allPosts}
                   title="No posts found"
                 />
               )}
