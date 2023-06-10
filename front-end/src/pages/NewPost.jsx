@@ -125,7 +125,7 @@ const NewPost = () => {
               <img
                 src={preview}
                 alt="preview"
-                className="w-9/12 h-9/12 object-contain opacity-40"
+                className="w-9/12 h-9/12"
               />
             )}
 
@@ -145,7 +145,7 @@ const NewPost = () => {
           <button
           type="button"
           onClick={generateImage}
-          className="text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+          className="text-white bg-[#06a299] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             {generatingImg ? "Generating..." : "Generate"}
           </button>
@@ -156,7 +156,7 @@ const NewPost = () => {
           <p className="mt-2 text-[#666e75] text-[14px]">After crafting your desired image, feel free to share it with fellow community members.</p>
           <button
             type="submit"
-            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md texted-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            className="mt-3 text-white bg-[#dfdc01] font-medium rounded-md texted-sm w-full sm:w-auto px-5 py-2.5 text-center"
             >
               {loading ? 'Sharing...' : 'Share with the community'}
           </button>
