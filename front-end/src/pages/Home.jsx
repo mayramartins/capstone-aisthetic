@@ -53,7 +53,7 @@ const Home = () => {
       
       <div>
         <h1 className="font-extrabold text-[#7D40FF] text-[32px]">Find Creations </h1>
-        <p className="mt-2 text-[#AA8AEF] text-[14px] max-w [500px]">Explore a compilation of imaginative and visually captivating images created by AIsthetic</p>
+        <p className="mt-2 font-bold text-[#717983] text-[14px] max-w [500px]">Explore a compilation of imaginative and visually captivating images created by AIsthetic</p>
       </div>
 
       <div className="mt-16">
