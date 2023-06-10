@@ -88,8 +88,8 @@ const NewPost = () => {
     <section className="max-w-7x1 mx-auto">
 
       <div>
-        <h1 className="f ont-extrabold text-[#222328] text-[32px]">Create</h1>
-        <p className="mt-2 text-[#666e75] text-[14px] max-w [500px]">Create imaginative and visually captivating images created with AIsthetic and share with the community!</p>
+        <h1 className="font-bold text-[#7D40FF] text-[32px]">Create</h1>
+        <p className="mt-2 text-[#AA8AEF] text-[14px] max-w [500px]">Create imaginative and visually captivating images created with AIsthetic and share with the community!</p>
       </div>
 
       <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
@@ -145,7 +145,7 @@ const NewPost = () => {
           <button
           type="button"
           onClick={generateImage}
-          className="text-white bg-[#06a299] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+          className="text-white bg-[#00DDDA] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             {generatingImg ? "Generating..." : "Generate"}
           </button>
@@ -153,10 +153,10 @@ const NewPost = () => {
         </div>
 
         <div className="mt-10">
-          <p className="mt-2 text-[#666e75] text-[14px]">After crafting your desired image, feel free to share it with fellow community members.</p>
+          <p className="mt-2 text-[#259493] text-[14px]">After crafting your desired image, feel free to share it with fellow community members.</p>
           <button
             type="submit"
-            className="mt-3 text-white bg-[#dfdc01] font-medium rounded-md texted-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            className="mt-3 text-white bg-[#00BFBD] font-medium rounded-md texted-sm w-full sm:w-auto px-5 py-2.5 text-center"
             >
               {loading ? 'Sharing...' : 'Share with the community'}
           </button>

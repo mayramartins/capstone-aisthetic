@@ -52,8 +52,8 @@ const Home = () => {
     <section className="max-w-7x1 mx-auto">
       
       <div>
-        <h1 className="font-extrabold text-[#222328] text-[32px]">Community Creations </h1>
-        <p className="mt-2 text-[#666e75] text-[14px] max-w [500px]">Explore a compilation of imaginative and visually captivating images created by AIsthetic</p>
+        <h1 className="font-extrabold text-[#7D40FF] text-[32px]">Find Creations </h1>
+        <p className="mt-2 text-[#AA8AEF] text-[14px] max-w [500px]">Explore a compilation of imaginative and visually captivating images created by AIsthetic</p>
       </div>
 
       <div className="mt-16">
