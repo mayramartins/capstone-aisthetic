@@ -25,7 +25,7 @@ const Home = () => {
       
 
       try {
-        const response = await fetch('http://aisthetic.herokuapp.com/api/v1/post', {
+        const response = await fetch('https://aisthetic.herokuapp.com/api/v1/post', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
