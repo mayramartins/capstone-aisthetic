@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Spinner, Card, FormEntry } from '../components';
 
 const RenderCards = ({ data, title }) => {
-  // if data is >0 I want to map over to data render all cards while passing all of the post data to each card
   if(data?.length > 0) {
     return data.map((post) => <Card key={post._id} {...post} />);
   }
@@ -13,12 +12,11 @@ const RenderCards = ({ data, title }) => {
 };
 
 const Home = () => {
-  const [spinning, setSpinning] = useState(false); //change true spinning
+  const [spinning, setSpinning] = useState(false); 
   const [allPosts, setAllPosts] = useState(null);
 
   const [findText, setfindText] = useState('');
 
-  // Make a call to get all the posts
   useEffect(() => {
     const fetchPosts = async () => {
       setSpinning(true);

@@ -5,7 +5,6 @@ import { preview } from '../assets';
 import { getRandomPrompt } from '../utilities';
 import { FormEntry, Spinner } from '../components';
 
-// Navigate to the Home Page and Posts
 const NewPost = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -30,12 +29,9 @@ const NewPost = () => {
         });
 
         const data = await response.json();
-        //console.log(response );
-        //console.log(data);
         
-        setForm({...form, picture: `data:image/jpeg;base64,${data.picture}`}) //base 64 way to transform content in a text format (image format binary)
+        setForm({...form, picture: `data:image/jpeg;base64,${data.picture}`}) 
         
-        //setTimeout(()=> console.log(form), 2000);
       } catch (error) {
         alert(error);
       } finally {
@@ -48,7 +44,7 @@ const NewPost = () => {
   
   
   const handleSubmit = async (e) => {
-    e.preventDefault(); //prevent the browser to reload the app
+    e.preventDefault(); 
 
     if(form.prompt && form.picture) {
       setLoading(true);
